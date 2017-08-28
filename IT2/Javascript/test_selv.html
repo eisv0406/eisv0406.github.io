@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        #bilde {
+            transition: 3s;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Informasjonsteknologi 2</h1>
+    <p>dette er en test </p>
+    <img id="bilde" src="201412101759682601076662_sbig.jpg">;
+
+    <script>
+
+
+        //startet på side 32 prøv selv
+        //1alert(document.body.innerHTML);
+
+        //2document.body.innerHTML = "<h1>Ost</h1>";
+
+        //3prompt("Skriv inn navnet ditt");
+
+        //prøv eslv side 37
+
+        //alert(window.innerHeight);
+        //alert(navigator.appName);
+
+        //document.body.innerHTML = "<h1>Nytt HTML-innhold</h1>";
+
+        //prøv selv side 42
+        //
+
+        document.getElementById("IdTilElement"); // det skjer ingenting hvis du ikke har en id som heter IDtilElement
+
+        document.onclick = (klikk) => {
+        document.getElementById("bilde").src = "Hund_loper.jpg";
+        document.body.innerHTML = "<p> Nå er dette et nytt avsnitt</p>";
+
+        }
+
+
+    </script>
+</body>
+</html>

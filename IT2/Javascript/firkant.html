@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firkant</title>
+
+    <style>
+        #firkant {
+            height: 50px;
+            width: 100px;
+            background-color: blue;
+            transition: 4s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="firkant"></div>
+
+    <script>
+
+        document.onclick = (klikk) => {
+            document.body.style.backgroundColor = "red"
+            document.getElementById("firkant").style.backgroundColor = "orange";
+            document.getElementById("firkant").style.width = "600px";
+            document.getElementById("firkant").style.height = "50px";
+        }
+
+
+    </script>
+
+</body>
+</html>
