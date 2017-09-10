@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+    <style>
+        #myCanvas{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id = "myCanvas" width = "200" height="600"></canvas>
+
+    <script>
+
+
+        var myCanvas = document.getElementById("myCanvas");
+        var ctx = myCanvas.getContext("2d");
+
+       myCanvas.height = innerHeight;
+       myCanvas.width = innerWidth;
+
+        function draw(){
+
+
+            var x = Math.random()*innerWidth;
+            var y = Math.random()*innerHeight;
+            var r = Math.random()*100;
+
+
+            ctx.beginPath();
+            ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.5)`;
+            ctx.arc(x,y,r, 0, Math.PI*100);
+            ctx.fill();
+
+            ctx.closePath();
+
+
+
+        }
+
+
+        setInterval(draw, 1);
+        draw()
+    </script>
+
+</body>
+</html>
