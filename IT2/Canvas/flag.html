@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flag</title>
+</head>
+<body>
+
+<canvas id="minCanvas"></canvas>
+
+<script>
+
+    var minCanvas = document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+
+    minCanvas.height = innerHeight;
+    minCanvas.width = innerWidth;
+
+    function draw() {
+
+        var x = Math.random()*innerWidth; //Startposisjoner for hodet
+        var y = Math.random()*innerHeight;
+
+        ctx.fillStyle = "whitesmoke";
+        ctx.fillRect(x, y, 300, 150);
+
+        ctx.fillStyle="blue";
+        ctx.fillRect(x+100, y, 30, 150);
+        ctx.fillRect(x,y + 60, 300, 30);
+
+    }
+
+    setInterval(draw, 1000);
+</script>
+</body>
+</html>
