@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+</head>
+<body>
+
+
+<script>
+
+    var mobil = prompt("Hvilke mobil merke vil du vite mer om?");
+    switch(mobil.toLowerCase()){
+        case "samsung":
+            document.write("Samsung ble laget i 1938 i Sør-Korea. Samsung nyeste telefon er samsung Galaxy s8");
+            document.body.style.backgroundColor = "blue";
+            break;
+        case "apple":
+            document.write("Apple ble laget i 1976. De lanserte nettopp de nye telfonene IPhone 8 og IPhone X");
+            document.body.style.backgroundColor = "green";
+            break;
+        case "sony":
+            document.write("Sony ble laget i 1946. Deres toppmodell er Sony Xperia XZ Premium");
+            document.body.style.backgroundColor = "yellow";
+            break;
+        case "microsoft":
+            document.write("Microsoft er et amerikansk selskap som ble stiftet i 1975, av Bill Gates og Paul Allen");
+            document.body.style.backgroundColor = "red";
+            break;
+        default:
+            document.write("Vi har kun informasjon om Sony, Apple, Microsoft og Samsung");
+    }
+
+
+
+
+</script>
+</body>
+</html>
