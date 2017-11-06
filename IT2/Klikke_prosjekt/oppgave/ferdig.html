@@ -134,7 +134,7 @@
             oppsumering();
             Greendiv.onclick = kill;
         } else {
-            setTimeout(stoppKlokka, 10000);
+            setTimeout(stoppKlokka, 1000);
             console.log("Starter klokka");
         }
 
@@ -196,7 +196,7 @@
         //var gjennomsnittVenstre = antallVenstre /5;
         var gjennomsnittHoyre = antallHoyre /5;
         //rightlist.innerHTML += "<td>" + gjennomsnittVenstre + "</td>";
-        rightlist.innerHTML += "<td>" + gjennomsnittHoyre + "</td>";
+        rightlist.innerHTML += "<td> RHA " + gjennomsnittHoyre + "</td>";
 
 
     }
@@ -209,7 +209,7 @@
                 antallVenstre += rundetider[i];
             }
         var gjenomsnittVenstre = antallVenstre/5;
-        leftlist.innerHTML += "<td>" + gjenomsnittVenstre + "</td>";
+        leftlist.innerHTML += "<td> LHA " + gjenomsnittVenstre + "</td>";
     }
 
     function oppsumering() {
