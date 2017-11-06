@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Klikk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <style>
+
+        body {
+            background-color: #333333;
+        }
+
+        #bigdiv {
+            position: relative;
+            height: 30vw;
+            width: 97vw;
+        }
+        #Greendiv {
+            background-color: darkgreen;
+            position: absolute;
+            width: 97vw;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        #Reddiv {
+            background-color: darkred;
+            position: absolute;
+            width: 97vw;
+            height: 100%;
+            border-radius: 20px;
+        }
+        #Restart {
+            position: relative;
+
+        }
+        #Restart {
+            margin: 0 auto;
+            display: block;
+            width: 200px;
+            height: 50px;
+        }
+
+        table, tr, td {
+            padding: 15px;
+            color: white;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        #Restart {
+            margin-top: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="add"></div>
+<div id="bigdiv">
+    <div id="Reddiv"></div>
+    <div id="Greendiv"></div>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Attempt</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+        <tr id="leftlist">
+            <td>Left</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="rightlist">
+            <td>Right</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<button id="Restart">Restart</button>
+
+<script>
+
+    var Restart = document.getElementById("Restart");
+    var leftlist = document.getElementById("leftlist");
+    var rightlist = document.getElementById("rightlist");
+
+
+    var Greendiv = document.getElementById("Greendiv");
+    var Reddiv = document.getElementById("Reddiv");
+    var antall = 0;
+
+
+    var runde = 0;
+    var rundetider = [];
+
+
+    var tidenflyer = false;
+
+    Greendiv.onclick = tell;
+    //keyrri tell 4evr
+
+    function tell() {
+        if (runde<=10){
+            if(tidenflyer){
+                antall++;
+
+                console.log(antall);
+                // document.getElementById("antallKlikk").textContent=antall;
+            }else {
+                startKlokka();
+            }
+        }
+    }
+
+    function startKlokka() {
+        tidenflyer = true;
+        //Stopper klokka etter 10 sekunder
+        if (runde==10) {
+            oppsumering();
+            Greendiv.onclick = kill;
+        } else {
+            setTimeout(stoppKlokka, 10000);
+            console.log("Starter klokka");
+        }
+
+    }
+    function stoppKlokka() {
+        tidenflyer = false;
+        Greendiv.style.display="none";
+        console.log("Stopper klokka");
+        //TODO -Registrer antall klikk
+
+        rundetider.push(antall);
+
+        var celle;
+
+        if (runde>=5) {
+            celle  = document.querySelector(`#rightlist td:nth-child(${runde+2 -5})`);
+
+        } else {
+            celle  = document.querySelector(`#leftlist td:nth-child(${runde+2})`);
+
+        }
+
+        celle.innerHTML = antall;
+        runde++;
+        //antall= 0;//Reset antall
+        setTimeout(reset, 2000);
+    }
+    function reset() {
+        antall = 0;
+        Greendiv.style.display = "";
+
+    }
+
+    function resetAll() {
+        rightlist.innerHTML = "<td>Right</td>";
+        leftlist.innerHTML = "<td>Left</td>";
+        antall = 0;
+        runde = 0;
+        Greendiv.style.display = "";
+        runde = [];
+        document.location.reload();
+
+    }
+
+
+
+    function oppsumeringHoyre() {
+
+        var antallHoyre = 0;
+
+        for (var i=6; i < rundetider.length; i++)
+            if (i<10) {
+                // Venstre hånd
+                antallHoyre += rundetider[i];
+                // } else {
+                //h hånd
+                //   antallVenstre += rundetider[i];
+            }
+        //var gjennomsnittVenstre = antallVenstre /5;
+        var gjennomsnittHoyre = antallHoyre /5;
+        //rightlist.innerHTML += "<td>" + gjennomsnittVenstre + "</td>";
+        rightlist.innerHTML += "<td>" + gjennomsnittHoyre + "</td>";
+
+
+    }
+
+    function oppsumeringVenstre() {
+        var antallVenstre = 0;
+        for (var i=0; i < rundetider.length; i++)
+            if (i<5) {
+
+                antallVenstre += rundetider[i];
+            }
+        var gjenomsnittVenstre = antallVenstre/5;
+        leftlist.innerHTML += "<td>" + gjenomsnittVenstre + "</td>";
+    }
+
+    function oppsumering() {
+        console.log(oppsumeringHoyre());
+        console.log(oppsumeringVenstre());
+    }
+
+    Restart.onclick = resetAll;
+
+</script>
+
+</body>
+</html>
