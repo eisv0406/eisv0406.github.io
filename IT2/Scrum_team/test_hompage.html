@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<title>BreakfastClub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<style>
+    .w3-sidebar a {font-family: "Roboto", sans-serif}
+    body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+        <h3 class="w3-wide"><b>BreakfastClub</b></h3>
+    </div>
+    <div>
+        <a href="test_hompage.html" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+        <a href="brød_underside.html" class="w3-bar-item w3-button w3-hover-blue">Brød</a>
+        <a href="drikke_underside.html" class="w3-bar-item w3-button w3-hover-blue">Drikke</a>
+        <a href="pålegg_underside.html" class="w3-bar-item w3-button w3-hover-blue">Pålegg</a>
+        <a href="glutenfri_underside.html" class="w3-bar-item w3-button w3-hover-blue">Glutenfri</a>
+
+    </div>
+
+</nav>
+
+<!-- Top menu på liten skjerm -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide">BreakfastClub</div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay når jeg åpner menu på liten skjerm -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- bilder -->
+<div class="w3-main" style="margin-left:250px">
+
+    <!-- liten skjerm  -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+    <!-- header -->
+    <header class="w3-container w3-xlarge">
+        <h1 class="w3-left"></h1>
+    </header>
+
+
+    <!-- stort bilde -->
+    <div class="topbide">
+        <div class="w3-display-container w3-container">
+            <img src="tophead.jpg" alt="Sale" style="width:98.3%">
+            <div class="w3-display-left w3-text-white" style="padding:24px 48px">
+                <h1 class="w3-jumbo w3-hide-small w3-text-yellow w3-animate-opacity">NYE VARER</h1>
+                <h1 class="w3-hide-large w3-hide-medium w3-animate-opacity">Nye produkter</h1>
+                <h1 class="w3-hide-small w3-animate-opacity"></h1>
+                <p><a href="#" class="w3-button w3-yellow w3-padding-large w3-large">SHOP NOW</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mest poppulær -->
+    <header class="w3-container w3-xlarge">
+        <p class="w3-left">Mest populære</p>
+    </header>
+
+
+    <!-- Produktene -->
+    <div class="w3-row">
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="baking.jpg" style="width:100%">
+                <p>Proteinbrød<br><b>27kr,-</b></p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <div class="w3-display-container">
+                    <img src="egg%20and%20bacon.jpg" style="width:100%">
+                    <span class="w3-tag w3-display-topleft">Nytt</span>
+                    <div class="w3-display-middle w3-display-hover">
+                        <button class="w3-button">Buy now <i class="fa fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                <p>Egg & Bacon<br><b class="w3-text-red">49kr,-</b></p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="jacket1.jpg" style="width:98%">
+                <p>Rugbrød<br><b>19kr,-</b></p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="melk.jpg" style="width:92.5%">
+                <p>Melk<br><b>24kr,-</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Kontakt oss -->
+<div class="boxrow">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:720px" id="contact">
+        <h2 class="w3-wide w3-center">Kontakt</h2>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Oslo, Norway<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: 40329122<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: breakfastclub@yahoo.com<br>
+            </div>
+            <div class="w3-col m6">
+                <form target="">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Ema-l">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-btn w3-section w3-right" type="submit">SEND</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+
+
+    // Script for å lukke og åpne sidebar sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+</footer>
+
+
+
+</body>
+</html>
